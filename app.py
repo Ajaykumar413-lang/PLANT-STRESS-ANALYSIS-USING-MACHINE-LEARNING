@@ -33,8 +33,7 @@ div.stButton > button {
 st.title("🌱 Plant Stress Analysis Using Machine Learning")
 
 # Load trained model
-model = pickle.load(open("model/model.pkl", "rb"))
-
+model = pickle.load(open("model.pkl", "rb"))
 uploaded_file = st.file_uploader("Upload Plant Image", type=["jpg", "png", "jpeg"])
 
 if uploaded_file is not None:
@@ -83,4 +82,5 @@ if uploaded_file is not None:
 
     fig, ax = plt.subplots()
     ax.bar(["Intensity", "Green Ratio", "Texture"], features)
+
     st.pyplot(fig)
